@@ -56,6 +56,18 @@
       var KSDay5Wind = parsed_json['daily']['data']['5']['windSpeed'];
       document.getElementById("KSDay5").innerHTML = ("High: " + KSDay5High + "<br>Low: " + KSDay5Low + 
               "<br>Wind: " + KSDay5Wind + " MPH");
+      
+      var KSDay6High = parsed_json['daily']['data']['6']['temperatureMax'];
+      var KSDay6Low = parsed_json['daily']['data']['6']['temperatureMin'];
+      var KSDay6Wind = parsed_json['daily']['data']['6']['windSpeed'];
+      document.getElementById("KSDay6").innerHTML = ("High: " + KSDay6High + "<br>Low: " + KSDay6Low + 
+              "<br>Wind: " + KSDay6Wind + " MPH");
+      
+      var KSDay7High = parsed_json['daily']['data']['7']['temperatureMax'];
+      var KSDay7Low = parsed_json['daily']['data']['7']['temperatureMin'];
+      var KSDay7Wind = parsed_json['daily']['data']['7']['windSpeed'];
+      document.getElementById("KSDay7").innerHTML = ("High: " + KSDay7High + "<br>Low: " + KSDay7Low + 
+              "<br>Wind: " + KSDay7Wind + " MPH");
   }
   });
 });    
@@ -70,6 +82,8 @@
     document.getElementById("KSDay3").innerHTML = "";
     document.getElementById("KSDay4").innerHTML = "";
     document.getElementById("KSDay5").innerHTML = "";
+    document.getElementById("KSDay6").innerHTML = "";
+    document.getElementById("KSDay7").innerHTML = "";
                 jQuery(document).ready(function($) {
   $.ajax({
   //url : "http://api.wunderground.com/api/f2d797797fddd20c/geolookup/conditions/q/DE/Claymont.json",
@@ -106,7 +120,7 @@ jQuery(document).ready(function($) {
   var day1w = parsed_json ['forecast']['simpleforecast']['forecastday']['1']['avewind']['mph'];
   var day1Con = parsed_json ['forecast']['simpleforecast']['forecastday']['1']['conditions'];
   var day1icon = parsed_json ['forecast']['simpleforecast']['forecastday']['1']['icon_url'];
-  document.getElementById("day1").innerHTML = (date1+"<br><br>High: "+day1h+"<br>Low: "+day1l+"<br>Avg Wind: "+day1w+" mph<br>"+day1Con);
+  document.getElementById("day1").innerHTML = ("<b>"+date1+"</b><br><br>High: "+day1h+"<br>Low: "+day1l+"<br>Avg Wind: "+day1w+" mph<br>"+day1Con);
   document.getElementById("day1image").src = (day1icon);
   
   var date2 = parsed_json ['forecast']['simpleforecast']['forecastday']['2']['date']['weekday'];
@@ -115,7 +129,7 @@ jQuery(document).ready(function($) {
   var day2w = parsed_json ['forecast']['simpleforecast']['forecastday']['2']['avewind']['mph'];
   var day2Con = parsed_json ['forecast']['simpleforecast']['forecastday']['2']['conditions'];
   var day2icon = parsed_json ['forecast']['simpleforecast']['forecastday']['2']['icon_url'];
-  document.getElementById("day2").innerHTML = (date2+"<br>High: "+day2h+"<br>Low: "+day2l+"<br>Avg Wind: "+day2w+" mph<br>"+day2Con);
+  document.getElementById("day2").innerHTML = ("<b>"+date2+"</b><br><br>High: "+day2h+"<br>Low: "+day2l+"<br>Avg Wind: "+day2w+" mph<br>"+day2Con);
   document.getElementById("day2image").src = (day2icon);
   
   var date3 = parsed_json ['forecast']['simpleforecast']['forecastday']['3']['date']['weekday'];
@@ -124,7 +138,7 @@ jQuery(document).ready(function($) {
   var day3w = parsed_json ['forecast']['simpleforecast']['forecastday']['3']['avewind']['mph'];
   var day3Con = parsed_json ['forecast']['simpleforecast']['forecastday']['3']['conditions'];
   var day3icon = parsed_json ['forecast']['simpleforecast']['forecastday']['3']['icon_url'];
-  document.getElementById("day3").innerHTML = (date3+"<br>High: "+day3h+"<br>Low: "+day3l+"<br>Avg Wind: "+day3w+" mph<br>"+day3Con);
+  document.getElementById("day3").innerHTML = ("<b>"+date3+"</b><br><br>High: "+day3h+"<br>Low: "+day3l+"<br>Avg Wind: "+day3w+" mph<br>"+day3Con);
   document.getElementById("day3image").src = (day3icon);
   
   var date4 = parsed_json ['forecast']['simpleforecast']['forecastday']['4']['date']['weekday'];
@@ -133,7 +147,7 @@ jQuery(document).ready(function($) {
   var day4w = parsed_json ['forecast']['simpleforecast']['forecastday']['4']['avewind']['mph'];
   var day4Con = parsed_json ['forecast']['simpleforecast']['forecastday']['4']['conditions'];
   var day4icon = parsed_json ['forecast']['simpleforecast']['forecastday']['4']['icon_url'];
-  document.getElementById("day4").innerHTML = (date4+"<br>High: "+day4h+"<br>Low: "+day4l+"<br>Avg Wind: "+day4w+" mph<br>"+day4Con);
+  document.getElementById("day4").innerHTML = ("<b>"+date4+"</b><br><br>High: "+day4h+"<br>Low: "+day4l+"<br>Avg Wind: "+day4w+" mph<br>"+day4Con);
   document.getElementById("day4image").src = (day4icon);
   
   var date5 = parsed_json ['forecast']['simpleforecast']['forecastday']['5']['date']['weekday'];
@@ -142,8 +156,26 @@ jQuery(document).ready(function($) {
   var day5w = parsed_json ['forecast']['simpleforecast']['forecastday']['5']['avewind']['mph'];
   var day5Con = parsed_json ['forecast']['simpleforecast']['forecastday']['5']['conditions'];
   var day5icon = parsed_json ['forecast']['simpleforecast']['forecastday']['5']['icon_url'];
-  document.getElementById("day5").innerHTML = (date5+"<br>High: "+day5h+"<br>Low: "+day5l+"<br>Avg Wind: "+day5w+" mph<br>"+day5Con);
+  document.getElementById("day5").innerHTML = ("<b>"+date5+"</b><br><br>High: "+day5h+"<br>Low: "+day5l+"<br>Avg Wind: "+day5w+" mph<br>"+day5Con);
   document.getElementById("day5image").src = (day5icon);
+  
+  var date6 = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['date']['weekday'];
+  var day6h = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['high']['fahrenheit'];
+  var day6l = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['low']['fahrenheit'];
+  var day6w = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['avewind']['mph'];
+  var day6Con = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['conditions'];
+  var day6icon = parsed_json ['forecast']['simpleforecast']['forecastday']['6']['icon_url'];
+  document.getElementById("day6").innerHTML = ("<b>"+date6+"</b><br><br>High: "+day6h+"<br>Low: "+day6l+"<br>Avg Wind: "+day6w+" mph<br>"+day6Con);
+  document.getElementById("day6image").src = (day6icon);
+  
+  var date7 = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['date']['weekday'];
+  var day7h = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['high']['fahrenheit'];
+  var day7l = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['low']['fahrenheit'];
+  var day7w = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['avewind']['mph'];
+  var day7Con = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['conditions'];
+  var day7icon = parsed_json ['forecast']['simpleforecast']['forecastday']['7']['icon_url'];
+  document.getElementById("day7").innerHTML = ("<b>"+date7+"</b><br><br>High: "+day7h+"<br>Low: "+day7l+"<br>Avg Wind: "+day7w+" mph<br>"+day7Con);
+  document.getElementById("day7image").src = (day7icon);
   
   document.getElementById("logo").style.display= "block";
   }
@@ -160,14 +192,16 @@ jQuery(document).ready(function($) {
 <div id="weatherDiscreption"></div>
 <img src="" id="image" name="image"/>
 <br>
-<h2>5 Day Forecast</h2>
+<h2>7 Day Forecast</h2>
 
-<ul class="KS5DayUl">
-    <li class="KS5DayLi" id="KSDay1"></li>
-    <li class="KS5DayLi" id="KSDay2"></li>
-    <li class="KS5DayLi" id="KSDay3"></li>
-    <li class="KS5DayLi" id="KSDay4"></li>
-    <li class="KS5DayLi" id="KSDay5"></li>
+<ul class="KS7DayUl">
+    <li class="KS7DayLi" id="KSDay1"></li>
+    <li class="KS7DayLi" id="KSDay2"></li>
+    <li class="KS7DayLi" id="KSDay3"></li>
+    <li class="KS7DayLi" id="KSDay4"></li>
+    <li class="KS7DayLi" id="KSDay5"></li>
+    <li class="KS7DayLi" id="KSDay6"></li>
+    <li class="KS7DayLi" id="KSDay7"></li>
 </ul>
 
 <ul class="parent">
@@ -180,6 +214,10 @@ jQuery(document).ready(function($) {
 <li class="child" id="day4"></li>
 
 <li class="child" id="day5"></li>
+
+<li class="child" id="day6"></li>
+
+<li class="child" id="day7"></li>
 </ul>
 <ul class="imgUL">
     <img class="imgList" src="" id="day1image"/>
@@ -187,6 +225,8 @@ jQuery(document).ready(function($) {
     <img class="imgList" src="" id="day3image"/>
     <img class="imgList" src="" id="day4image"/>
     <img class="imgList" src="" id="day5image"/>
+    <img class="imgList" src="" id="day6image"/>
+    <img class="imgList" src="" id="day7image"/>
 </ul>
 
 <br>
@@ -199,8 +239,8 @@ jQuery(document).ready(function($) {
     }
     img.imgList {
         display:inline-block;
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-right: 42px;
+        margin-left: 42px;
         margin-top: 0px;
     }
 </style>
